@@ -1,0 +1,97 @@
+@use "../global" as *;
+
+// ご提供するツール例セクション
+.tools {
+  background-image: url("/images/gd-top.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-block: to-rem(60);
+  @include mq-up(md) {
+    padding-block: to-rem(96) to-rem(100);
+  }
+  @include mq-up(wide) {
+    background-size: cover;
+  }
+}
+
+.tools__heading {
+  margin-bottom: to-rem(20);
+  @include mq-up(md) {
+    margin-bottom: to-rem(40);
+  }
+}
+.tools__cards {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(24);
+
+  @include mq-up(md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.tools__card {
+  flex: 1;
+  background-color: $white;
+  border-radius: to-rem(10);
+  padding: to-rem(30);
+  box-shadow: 0px 9px 24px 0px rgba(42, 192, 190, 0.30000001192092896);
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+
+  @include mq-up(md) {
+    padding-block: to-rem(40) to-rem(30);
+    gap: to-rem(24);
+  }
+}
+
+.tools__card-title {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  color: #006977;
+  line-height: 1.6;
+  text-align: center;
+
+  @include mq-up(md) {
+    font-size: to-rem(22);
+  }
+}
+
+.tools__card-figure {
+  margin-inline: auto;
+}
+
+.tools__card-figure--pc {
+  // width: to-rem(270);
+  height: auto;
+  @include mq-up("md") {
+    width: to-rem(442);
+  }
+}
+
+.tools__card-figure--pc img {
+  aspect-ratio: 270 / 159;
+  object-fit: contain;
+  @include mq-up("md") {
+    aspect-ratio: 442 / 160;
+  }
+}
+
+.tools__card-figure--study {
+  // width: to-rem(270);
+  height: auto;
+  @include mq-up("md") {
+    width: to-rem(442);
+  }
+}
+
+.tools__card-figure--study img {
+  aspect-ratio: 270 / 278;
+  object-fit: contain;
+  @include mq-up("md") {
+    aspect-ratio: 442 / 160;
+  }
+}

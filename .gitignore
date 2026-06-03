@@ -1,0 +1,19 @@
+# 依存関係
+node_modules/
+
+# ビルド成果物
+dist/
+
+# macOS
+.DS_Store
+
+# ログ
+*.log
+npm-debug.log*
+
+# エディタ
+.vscode/
+.idea/
+
+# 画像ファイル
+public/images/

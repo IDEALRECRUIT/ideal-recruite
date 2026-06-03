@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IDEAL RECRUIT 集客サービス｜広告費15万円で、月45人の面談へ。</title>
+<meta name="description" content="求人ボックスを使った、人材紹介会社のための集客代行サービス。「面談につながる応募」を、安定して作る仕組みです。初月、広告費は弊社が負担。" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<script>
+  window.TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "h1": "自信があるから、初月の広告費は、弊社が持ちます。",
+    "sub": "初月、広告費0円。月30〜45人の面談実施を実現させます。",
+    "ctaPrimary": "初月プランを試す",
+    "showResults": true,
+    "showPricing": true
+  }/*EDITMODE-END*/;
+</script>
+
+<style>
+  :root {
+    --primary:    #1E5FA8;
+    --dark:       #154275;
+    --accent:     #F26B7C;
+    --accent-2:   #E5566A;
+    --text:       #2A2A2A;
+    --sub:        #6B6B6B;
+    --line:       #E4E8EF;
+    --line-soft:  #EDF0F5;
+    --bg:         #FFFFFF;
+    --bg-light:   #F7F9FC;
+    --bg-blue:    #EEF3FB;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    font-size: 15px;
+    line-height: 1.8;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "palt" 1;
+  }
+  h1, h2, h3, h4 {
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    line-height: 1.4;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+  .wrap-narrow { max-width: 880px; margin: 0 auto; padding: 0 24px; }
+
+  /* Section base */
+  section { padding: 96px 0; }
+  .section-head { text-align: center; margin-bottom: 56px; }
+  .section-eyebrow {
+    font-size: 13px;
+    color: var(--primary);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+  .section-title {
+    font-size: clamp(26px, 3.4vw, 38px);
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .section-title .accent { color: var(--accent); }
+  .section-title .primary { color: var(--primary); }  .section-sub {
+    font-size: 15px;
+    color: var(--sub);
+    margin-top: 20px;
+    line-height: 2;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 18px 36px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(242,107,124,0.35);
+  }
+  .btn-primary:hover {
+    background: var(--accent-2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(242,107,124,0.45);
+  }
+  .btn-ghost {
+    background: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+  }
+  .btn-ghost:hover {
+    background: var(--primary);
+    color: #fff;
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--primary);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  }
+  .btn-white:hover { transform: translateY(-2px); }
+  .btn .arrow {
+    display: inline-block;
+    transition: transform .2s ease;
+  }
+  .btn:hover .arrow { transform: translateX(3px); }
+
+  /* Navigation */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 32px;
+    max-width: 1280px; margin: 0 auto;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 900;
+    font-size: 17px;
+    color: var(--primary);
+    letter-spacing: 0.04em;
+  }
+  .brand-mark {
+    width: 28px; height: 28px;
+    background: var(--primary);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .brand-mark::after {
+    content:""; position:absolute;
+    width:10px; height:10px;
+    background: var(--accent);
+    right:-3px; bottom:-3px;
+  }
+  .nav-links {
+    display: flex; gap: 32px;
+    font-size: 14px; font-weight: 500; color: var(--text);
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-cta {
+    padding: 10px 22px; font-size: 14px;
+  }
+
+  /* Placeholder */
+  .ph {
+    background:
+      repeating-linear-gradient(135deg, #DCE4EE 0 8px, transparent 8px 16px),
+      var(--bg-blue);
+    border: 1px dashed #B8C5D8;
+    display: flex; align-items: center; justify-content: center;
+    color: #6B7A93;
+    font-size: 12px;
+    text-align: center;
+  }
+  .ph-label {
+    background: #fff;
+    padding: 6px 12px;
+    border: 1px solid #B8C5D8;
+    border-radius: 4px;
+  }
+
+  /* Numbers */
+  .num {
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-weight: 800;
+  }
+
+  /* Responsive */
+  @media (max-width: 880px) {
+    section { padding: 64px 0; }
+    .wrap, .wrap-narrow { padding: 0 20px; }
+    .nav-inner { padding: 12px 20px; }
+    .nav-links { display: none; }
+    .nav-cta { padding: 8px 14px; font-size: 12px; }
+    .btn { padding: 16px 28px; font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <div class="header__inner inner">
+
+      <h1 class="header__logo">
+        <a href="/">
+          <span class="visually-hidden">IDEAL RECRUIT</span>
+          <figure class="header__logo-image">
+            <img src="/images/header__logo.svg" alt="" width="216" height="35">
+          </figure>
+        </a>
+      </h1>
+
+    </div>
+  </header>
+
+<div id="root"></div>
+
+  <!-- フッター -->
+  <footer class="footer" id="company">
+
+    <div class="footer__main">
+      <div class="inner footer__inner">
+        <div class="footer__grid">
+          <div class="footer__company">
+            <dl class="footer__company-list">
+              <div class="footer__company-item">
+                <dt class="footer__company-term">会社名</dt>
+                <dd class="footer__company-desc">合同会社 IDEAL RECRUIT</dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">設立日</dt>
+                <dd class="footer__company-desc">2022年10月</dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">代表者</dt>
+                <dd class="footer__company-desc">亀田奎</dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">住所</dt>
+                <dd class="footer__company-desc">〒553-0003<br>大阪市福島区福島七丁目1番10号WiZfukushima2階-228号</dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">Webサイト</dt>
+                <dd class="footer__company-desc"><a href="https://ideal-recruit-jp.com/" target="_blank"
+                    rel="noopener noreferrer" class="footer__link">https://ideal-recruit-jp.com/</a></dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">パートナー</dt>
+                <dd class="footer__company-desc">株式会社シーアイ・パートナーズ</dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">外部顧問</dt>
+                <dd class="footer__company-desc">障がい者雇用コミュニティ<br>discovery 代表 中知也<br>障がい者向けキャリアスクール<br>D-Biz COO　中村竜次郎
+                </dd>
+              </div>
+              <div class="footer__company-item">
+                <dt class="footer__company-term">問い合わせ</dt>
+                <dd class="footer__company-desc"><a href="mailto:info@ideal-recruit-jp.com"
+                    class="footer__link">info@ideal-recruit-jp.com</a></dd>
+              </div>
+            </dl>
+          </div>
+          <div class="footer__block">
+            <h3 class="footer__block-title">事業内容</h3>
+            <ul class="footer__block-list">
+              <li class="footer__block-item"><span class="footer__block-label">A-Biz</span><br>
+                自社ノウハウを元に、事業所様と利用者様のキャリアアップに繋がりさらに収益を上げられる事業を開発</li>
+              <li class="footer__block-item"><span class="footer__block-label">仕組み"課"長</span><br>
+                未経験者を即戦力化する教育の仕組みとマニュアル作成
+              </li>
+            </ul>
+          </div>
+          <div class="footer__block">
+            <ul class="footer__block-list">
+              <li class="footer__block-item"><span class="footer__block-label">人材紹介会社 送客サービス</span><br>人材紹介会社様への求職者集客
+              </li>
+              <li class="footer__block-item"><span
+                  class="footer__block-label">採用コンサルティング</span><br>採用設計、運用コンサルティング/<br>採用広告代理店の新規事業設計など</li>
+            </ul>
+          </div>
+
+          <figure class="footer__cert">
+            <img src="/images/social-logo.webp" alt="ソーシャル企業認証 S認証 Social and sustainable business standard" width="299"
+              height="233" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+    <div class="footer__nav">
+      <div class="inner footer__nav-copyright-wrap">
+        <p class="footer__nav-copyright">&copy;2026 合同会社 IDEAL RECRUIT. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ページトップボタン（FVを過ぎたら表示、footerに入ったら非表示） -->
+  <div class="page-top" id="js-page-top" aria-hidden="true">
+    <a href="#" class="page-top__link" aria-label="ページトップへ">
+      <img src="/images/page-top.webp" alt="" class="page-top__image" width="80" height="80" loading="lazy">
+    </a>
+  </div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="sections.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+<script type="module" src="../script.js"></script>
+
+</body>
+</html>

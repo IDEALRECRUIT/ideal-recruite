@@ -1,0 +1,393 @@
+@use "../global" as *;
+
+// 声（成功事例）セクション
+
+.voice {
+  padding-top: to-rem(60);
+
+  @include mq-up(md) {
+    padding-top: to-rem(106);
+  }
+}
+
+.voice__inner {
+  max-width: to-rem(1270);
+  margin-inline: auto;
+}
+
+.voice__heading {
+  font-size: to-rem(20);
+  text-align: center;
+  margin-bottom: to-rem(20);
+  @include mq-up(md) {
+    margin-bottom: to-rem(57);
+    font-size: to-rem(30);
+  }
+}
+
+.voice__list {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+
+  @include mq-up(md) {
+    gap: to-rem(0);
+    flex-direction: row;
+    border-radius: to-rem(10);
+    display: grid;
+grid-template-columns: 1fr 1fr;
+  }
+}
+
+// .voice__item {
+//   padding: to-rem(35) to-rem(30);
+//   background-color: #e9f4f4;
+//   border-radius: 10px;
+
+//   @include mq-up(md) {
+//     /* 角丸の再設計 */
+//     border-radius: 0;
+
+//     &:first-child {
+//       border-top-left-radius: 10px;
+
+//       /* 左：外側 右：内側 */
+//       padding: to-rem(40) to-rem(30) to-rem(40) to-rem(40);
+//     }
+
+//     &:nth-child(2) {
+//       border-top-right-radius: 10px;
+//       position: relative;
+//       padding: to-rem(40) to-rem(40) to-rem(40) to-rem(30);
+//     }
+//     &:nth-child(2)::before {
+//       content: "";
+//       position: absolute;
+//       left: 0;
+//       top: 40px;
+//       height: 88%;
+//       border-left: 1px dotted #2ad0ce;
+//     }
+//   }
+// }
+
+// .voice__content {
+//   max-width: to-rem(1000);
+//   display: flex;
+//   flex-direction: column;
+//   gap: to-rem(20);
+// }
+
+
+.voice__item {
+  padding: to-rem(35) to-rem(30);
+  background-color: #e9f4f4;
+  border-radius: 10px;
+  @include mq-up(md) {
+  /* 角丸の再設計 */
+  border-radius: 0;
+  // ★ここを追加
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  &:first-child {
+  border-top-left-radius: 10px;
+  padding: to-rem(40) to-rem(30) to-rem(40) to-rem(40);
+  }
+  &:nth-child(2) {
+  border-top-right-radius: 10px;
+  position: relative;
+  padding: to-rem(40) to-rem(40) to-rem(40) to-rem(30);
+  }
+  &:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 40px;
+  height: 88%;
+  border-left: 1px dotted #2ad0ce;
+  }
+  }
+  }
+  .voice__content {
+  max-width: to-rem(1000);
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+  // ★ここを追加
+  @include mq-up(md) {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  }
+  }
+
+.voice__title {
+  font-size: clamp(1.125rem, calc(0.95rem + 0.75vw), 1.625rem);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  color: #006977;
+}
+
+.voice__body {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(24);
+
+  @include mq-up(md) {
+    gap: to-rem(20);
+  }
+}
+
+.voice__profile-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: to-rem(20);
+  align-items: center;
+}
+
+.voice__figure img {
+  width: to-rem(80);
+  height: to-rem(80);
+  object-fit: cover;
+  border-radius: 50%;
+
+  @include mq-up(md) {
+    width: to-rem(105);
+    height: to-rem(105);
+  }
+}
+
+.voice__profile-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.voice__name {
+  font-size: to-rem(14);
+  font-weight: $fw-bold;
+  color: $black;
+  margin-bottom: to-rem(4);
+
+  @include mq-up(md) {
+    font-size: to-rem(18);
+  }
+}
+
+.voice__detail {
+  font-size: to-rem(14);
+  font-weight: $fw-normal;
+  color: $black;
+  line-height: 1.6;
+}
+
+.voice__text {
+  font-size: to-rem(14);
+  font-weight: $fw-normal;
+  color: $black;
+  line-height: 1.6;
+}
+
+.voice__results {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(24);
+
+  @include mq-up(md) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: to-rem(40);
+  }
+}
+
+.voice__results img {
+  aspect-ratio: 270 / 409;
+  object-fit: cover;
+  @include mq-up("md") {
+    aspect-ratio: 540 / 199;
+  }
+}
+
+.voice__results--with-image {
+  @include mq-up(md) {
+    align-items: stretch;
+  }
+}
+
+.voice__group-figure {
+
+  border-radius: to-rem(8);
+  overflow: hidden;
+
+  @include mq-down(md) {
+    max-width: to-rem(400);
+    margin-inline: auto;
+  }
+
+  @include mq-up(md) {
+    width: calc(50% - to-rem(20));
+    max-width: to-rem(400);
+  }
+}
+
+.voice__group-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.voice__stats {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(16);
+  flex-shrink: 0;
+
+  @include mq-up(md) {
+    min-width: to-rem(200);
+  }
+}
+
+.voice__chart-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.voice__chart-title {
+  font-size: to-rem(14);
+  font-weight: $fw-bold;
+  color: $black;
+  margin: 0 0 to-rem(16);
+}
+
+.voice__chart {
+  display: flex;
+  align-items: flex-end;
+  gap: to-rem(12);
+  height: to-rem(160);
+}
+
+.voice__chart-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: to-rem(8);
+  position: relative;
+  height: to-rem(120);
+}
+
+.voice__chart-label {
+  font-size: to-rem(12);
+  font-weight: $fw-normal;
+  color: $black;
+  order: 3;
+}
+
+.voice__chart-bar {
+  width: 100%;
+  max-width: to-rem(48);
+  height: calc(var(--h, 0) * 1%);
+  min-height: to-rem(4);
+  background-color: $main;
+  border-radius: to-rem(4) to-rem(4) 0 0;
+  order: 1;
+}
+
+// 他にも、導入後の変化を実感する声（カードブロック）
+$voice-more-bg: #e8f5f4;
+$voice-more-card-border: rgba(200, 220, 218, 0.6);
+
+.voice__more {
+  // margin-top: to-rem(60);
+  padding-block: to-rem(30);
+  background-color: #d6f1f1;
+  margin: to-rem(60) calc(50% - 50vw) to-rem(0);
+  width: 100vw;
+  position: relative;
+  z-index: 2;
+
+  @include mq-up(md) {
+    padding: to-rem(40) to-rem(52);
+    margin: initial;
+    border-radius: 0px 0px 10px 10px;
+    width: initial;
+  }
+}
+
+.voice__more-heading {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: to-rem(20);
+
+  @include mq-up(md) {
+    font-size: to-rem(26);
+    margin-bottom: to-rem(30);
+  }
+}
+
+.voice__more-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(24);
+  width: 87%;
+  margin-inline: auto;
+
+  @include mq-up(md) {
+    flex-direction: row;
+    gap: to-rem(20);
+    width: 100%;
+  }
+}
+
+.voice__more-card {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: to-rem(10);
+  padding: to-rem(30);
+  position: relative;
+
+  @include mq-up(md) {
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    gap: to-rem(24);
+    padding: to-rem(26) to-rem(140) to-rem(22) to-rem(40);
+  }
+}
+
+.voice__more-cardtext {
+  font-size: to-rem(16);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  flex: 1;
+  min-width: 0;
+}
+
+.voice__more-cardfigure {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  @include mq-up(md) {
+    right: 30px;
+  }
+}
+
+.voice__more-cardfigure img {
+  width: to-rem(70);
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+  @include mq-up(md) {
+    width: to-rem(100);
+  }
+}

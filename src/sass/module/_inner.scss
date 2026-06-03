@@ -1,0 +1,16 @@
+@use "../global" as *;
+
+// ================================================
+// 共通インナー幅
+// ================================================
+
+.inner {
+  max-width: 600px;
+  margin-inline: auto;
+  padding-inline: $padding-sp;
+
+  @include mq-up(md) {
+    padding-inline: $padding-pc;
+    max-width: $inner;
+  }
+}

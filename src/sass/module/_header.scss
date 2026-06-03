@@ -1,0 +1,129 @@
+@use "../global" as *;
+
+// ================================================
+// ヘッダー
+// ================================================
+
+.header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transition: background-color 0.3s ease;
+
+  @include mq-up(lg) {
+    padding: 0;
+    transition:
+      background-color 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  background: transparent;
+
+  // FVを過ぎたとき・ドロワー開時は白背景
+  &.header--scrolled,
+  &.js-drawer-open {
+    background: #fff;
+
+    @include mq-up(lg) {
+      padding: 1rem;
+    }
+  }
+}
+
+.header__inner {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 202px 1fr;
+  max-width: $inner;
+  margin-inline: auto;
+  padding-top: to-rem(15);
+  transition: padding-top 0.3s ease;
+
+  @include mq-up(lg) {
+    grid-template-columns: 216px 1fr;
+    padding-top: to-rem(53);
+  }
+}
+
+.header.header--scrolled .header__inner {
+  padding-top: to-rem(15);
+
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: to-rem(21);
+}
+
+.header__logo {
+  display: block;
+  width: to-rem(202);
+  z-index: 9999;
+
+  @include mq-up(md) {
+    width: to-rem(216);
+  }
+}
+
+.header__logo img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 216 / 35;
+  object-fit: contain;
+}
+
+.header__nav {
+  display: none;
+
+  @include mq-up(lg) {
+    display: block;
+  }
+}
+
+.header__list {
+  display: flex;
+  align-items: center;
+  gap: to-rem(21);
+}
+
+.header__item a {
+  font-size: to-rem(16);
+  font-weight: $fw-normal;
+  color: #000;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #999;
+    }
+  }
+}
+
+.header__btn {
+  @include mq-down(lg) {
+    display: none;
+  }
+}
+
+// ================================================
+// アンカーリンク：固定ヘッダー高さを考慮したスクロール位置
+// ================================================
+#business,
+#merit,
+#case,
+#voice,
+#greeting,
+#cta,
+#company {
+  scroll-margin-top: to-rem(70); // SP（ハンバーガーエリア含む想定）
+
+  @include mq-up(lg) {
+    scroll-margin-top: to-rem(100); // PC（padding-top 53px + ロゴ・余白）
+  }
+}

@@ -1,0 +1,124 @@
+@use "../global" as *;
+
+// 代表メッセージセクション
+
+.greeting {
+  padding-block: to-rem(60);
+  background-color: $white;
+  overflow: hidden;
+
+  @include mq-up(md) {
+    padding-block: to-rem(100);
+  }
+}
+
+.greeting__inner {
+  padding-left: to-rem(20);
+  padding-right: to-rem(20);
+  @include mq-up(md) {
+    padding-right: to-rem(20);
+    padding-left: 0;
+  }
+}
+
+.greeting__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "image"
+    "text";
+  max-width: 600px;
+  row-gap: to-rem(20);
+
+  @include mq-up(md) {
+    grid-template-columns: 54% 1fr;
+    grid-template-areas:
+      "image title"
+      "image text";
+    max-width: to-rem(1330);
+    column-gap: to-rem(10);
+    row-gap: to-rem(24);
+    @include mq-up(lg) {
+      column-gap: to-rem(80);
+    }
+  }
+}
+
+.greeting__figure {
+  grid-area: image;
+  margin-left: calc(50% - 50vw);
+  @include mq-up(md) {
+    margin-left: initial;
+  }
+}
+
+.greeting__header {
+  grid-area: title;
+}
+
+/* ワイドPCのみ固定幅中央寄せ */
+@include mq-up(wide) {
+  .greeting__container {
+    max-width: to-rem(1440);
+    margin-inline: auto;
+  }
+}
+
+.greeting__figure img {
+  aspect-ratio: 720 / 528;
+  height: auto;
+  object-fit: cover;
+}
+
+.greeting__body {
+  grid-area: text;
+  position: relative;
+  z-index: 1;
+}
+.greeting__body::before {
+  @include mq-up("md") {
+    content: "";
+    position: absolute;
+
+    background-image: url("/images/intro__treat.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    aspect-ratio: 449 / 393;
+    z-index: -1;
+
+    right: -13%;
+    top: -30%;
+    width: to-rem(449);
+    height: to-rem(393);
+  }
+}
+
+.greeting__heading {
+  font-size: clamp(20px, calc(17.772px + 0.571vw), 26px);
+  font-weight: $fw-bold;
+  color: #006977;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+}
+
+.greeting__text {
+  font-size: 0.875rem;
+  font-weight: $fw-normal;
+  line-height: 2;
+  @include mq-up(md) {
+    font-size: to-rem(16);
+  }
+}
+
+.greeting__signature {
+  font-size: 0.875rem;
+  font-weight: $fw-normal;
+  line-height: 1.6;
+  margin-top: to-rem(23);
+  @include mq-up(md) {
+    font-size: to-rem(18);
+  }
+}

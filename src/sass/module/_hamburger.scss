@@ -1,0 +1,66 @@
+@use "../global" as *;
+
+// ================================================
+// ハンバーガーメニュー
+// ================================================
+
+.hamburger {
+  position: fixed;
+  z-index: 9999;
+  top: to-rem(18);
+  right: to-rem(20);
+  width: to-rem(28);
+  height: to-rem(20);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+
+  @include mq-up(lg) {
+    display: none;
+  }
+}
+
+.hamburger__line {
+  width: 100%;
+  height: to-rem(3);
+  background: $main;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 0;
+}
+
+.hamburger__line:nth-child(1) {
+  top: 0;
+  width: to-rem(27);
+}
+
+.hamburger__line:nth-child(2) {
+  top: to-rem(9);
+  width: to-rem(27);
+}
+
+.hamburger__line:nth-child(3) {
+  top: to-rem(18);
+  width: to-rem(27);
+}
+
+// メニューが開いている時
+.hamburger.is-active .hamburger__line:nth-child(1) {
+  top: to-rem(9);
+  width: to-rem(24);
+  transform: rotate(-45deg);
+}
+
+.hamburger.is-active .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active .hamburger__line:nth-child(3) {
+  top: to-rem(9);
+  width: to-rem(24);
+  transform: rotate(45deg);
+}

@@ -1,0 +1,27 @@
+@use "../global" as *;
+
+.curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  // margin-top: -1rem;
+  z-index: 5;
+
+  &__svg {
+    height: auto;
+    display: block;
+    vertical-align: top;
+  }
+  @include mq-up(wide) {
+    // margin-top: -9rem;
+  }
+}
+
+.curve--challenge.curve {
+  position: relative;
+  margin-top: -1rem;
+  @include mq-up(lg) {
+    margin-top: -9rem;
+  }
+}

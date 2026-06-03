@@ -1,0 +1,13 @@
+@use "../global" as *;
+
+.sub-title {
+  font-size: to-rem(20);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  color: $black;
+
+  @include mq-up(md) {
+    font-size: to-rem(30);
+  }
+}

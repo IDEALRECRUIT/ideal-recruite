@@ -1,0 +1,126 @@
+@use "../global" as *;
+
+// CTA（コールトゥアクション）セクション
+
+$cta-bg-start: #5bc5c3;
+$cta-bg-end: #2a9d9b;
+$cta-heading-color: #0d5c5a;
+
+.cta {
+  padding-block: to-rem(30);
+  background-color: #e9f4f4;
+
+  @include mq-up(md) {
+    padding-block: to-rem(40);
+  }
+}
+
+.cta__wrapper {
+  background-image: url("/images/cta-btnSP.webp");
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  border-radius: to-rem(10);
+  padding: to-rem(30);
+  max-width: to-rem(600);
+  margin-inline: auto;
+
+  @include mq-up(md) {
+    margin-inline: auto;
+    max-width: to-rem(800);
+    width: 63%;
+    padding: to-rem(40) to-rem(51);
+    background-image: url("/images/cta-btn.webp");
+  }
+}
+
+.cta__content {
+  display: grid;
+  gap: to-rem(18);
+  justify-content: center;
+  grid-template-areas:
+    "heading"
+    "text"
+    "image"
+    "btn";
+
+  @include mq-up(lg) {
+    gap: to-rem(20);
+    grid-template-areas:
+      "heading image"
+      "text image"
+      "btn image";
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+.cta__heading {
+  grid-area: heading;
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  color: $white;
+  line-height: 1.6;
+  text-shadow: 0px 4px 15px #006977;
+
+  @include mq-up(md) {
+    font-size: to-rem(24);
+    margin-bottom: initial;
+  }
+}
+
+.cta__text {
+  grid-area: text;
+  font-size: to-rem(14);
+  font-weight: $fw-normal;
+  line-height: 1.6;
+
+  @include mq-up(md) {
+    font-size: to-rem(18);
+  }
+}
+
+.cta__button-wrap {
+  grid-area: btn;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: to-rem(12);
+}
+
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: to-rem(12);
+  max-width: none;
+  background-color: $white;
+  color: $cta-heading-color;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.9;
+      border-color: $white;
+    }
+  }
+}
+
+.cta__figure {
+  grid-area: image;
+  margin: 0;
+  flex-shrink: 0;
+  text-align: center;
+  width: 100%;
+  @include mq-up(lg) {
+    max-width: to-rem(350);
+  }
+}
+
+.cta__figure img {
+  width: 100%;
+  max-width: to-rem(320);
+  height: auto;
+  display: block;
+  margin-inline: auto;
+  object-fit: contain;
+}

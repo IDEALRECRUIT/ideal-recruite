@@ -1,0 +1,22 @@
+{
+  "name": "vite-scss-template-student",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run generate:webp:dev && vite",
+    "build": "vite build",
+    "build:prod": "vite build --minify",
+    "optimize": "node scripts/optimize-images.js",
+    "generate:webp:dev": "node scripts/generate-dev-webp.js"
+  },
+  "devDependencies": {
+    "@squoosh/lib": "^0.3.1",
+    "glob": "^11.0.3",
+    "sass": "^1.94.0",
+    "sharp": "^0.34.5",
+    "vite": "^7.2.2",
+    "vite-imagetools": "^9.0.0",
+    "vite-plugin-imagemin": "^0.6.1"
+  }
+}

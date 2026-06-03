@@ -1,0 +1,44 @@
+@use "../global" as *;
+
+// 標準的な成果シミュレーションセクション
+
+.result-simulation {
+  padding-block: to-rem(60) to-rem(80);
+  background-color: #f2f7f6;
+
+  @include mq-up(md) {
+    padding-block: to-rem(80) to-rem(100);
+  }
+}
+
+.result-simulation__wrapper {
+  max-width: to-rem(1200);
+  background-color: $white;
+  box-shadow: 0px 9px 24px 0px rgba(42, 192, 190, 0.30000001192092896);
+  border-radius: to-rem(10);
+  padding: to-rem(30);
+  margin-inline: auto;
+  @include mq-up(md) {
+    padding: to-rem(60);
+  }
+}
+
+.result-simulation__heading {
+  margin-bottom: to-rem(32);
+
+  @include mq-up(md) {
+    margin-bottom: to-rem(48);
+  }
+}
+
+.result-simulation__figure {
+  margin: 0;
+
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

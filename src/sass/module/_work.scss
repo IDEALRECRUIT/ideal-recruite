@@ -1,0 +1,331 @@
+@use "../global" as *;
+
+// 具体的な作業内容セクション
+
+.work {
+  background-image: url("/images/work__bgSP.webp");
+
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-block: to-rem(60);
+
+  @include mq-up(md) {
+    padding-block: to-rem(100) to-rem(20);
+    background-image: url("/images/work__bg.webp");
+  }
+  @include mq-up(wide) {
+    background-size: cover;
+  }
+}
+
+.work__heading {
+  margin-bottom: to-rem(20);
+  @include mq-up(md) {
+    margin-bottom: to-rem(30);
+  }
+}
+
+.work__lead {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: to-rem(20);
+
+  @include mq-up(md) {
+    font-size: to-rem(24);
+    margin-bottom: to-rem(30);
+  }
+}
+
+.work__wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: to-rem(12);
+  background-color: #e9f4f4;
+  border-radius: 10px;
+  padding: to-rem(30);
+  margin-bottom: to-rem(30);
+  @include mq-up(md) {
+    gap: to-rem(24);
+    padding: to-rem(35) to-rem(60) to-rem(30);
+    margin-bottom: 0;
+  }
+}
+
+.work__wrapper-head {
+  display: flex;
+  align-items: center;
+  gap: to-rem(12);
+  flex-direction: column;
+  @include mq-up(md) {
+    margin-right: auto;
+    flex-direction: row;
+  }
+}
+
+.work__wrapper-icon {
+  flex-shrink: 0;
+  display: block;
+  line-height: 0;
+}
+
+.work__wrapper-icon svg {
+  display: block;
+  width: to-rem(40);
+  height: to-rem(40);
+
+  @include mq-up(md) {
+    width: to-rem(48);
+    height: to-rem(48);
+  }
+}
+
+.work__wrapper-title {
+  font-size: clamp(18px, calc(13.774px + 1.127vw), 30px);
+  font-weight: $fw-bold;
+  color: #006977;
+  text-align: center;
+  display: flex;
+  gap: to-rem(12);
+}
+
+.work__cards {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+
+  @include mq-up(md) {
+    flex-direction: row;
+    gap: to-rem(25);
+  }
+}
+
+.work__card {
+  flex: 1;
+  background-color: $white;
+  border-radius: to-rem(12);
+  padding: to-rem(20);
+
+  @include mq-up(md) {
+    padding: to-rem(24);
+  }
+}
+
+.work__card-title {
+  position: relative;
+  font-size: to-rem(16);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: to-rem(10);
+  color: #006977;
+  padding-inline-start: to-rem(20);
+  padding-bottom: to-rem(12);
+  border-bottom: 2px solid #006977;
+  margin-bottom: to-rem(12);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: to-rem(8);
+    width: to-rem(11);
+    height: to-rem(11);
+    border-radius: 50%;
+    background-color: #2ad0ce;
+  }
+
+  @include mq-up(md) {
+    font-size: to-rem(20);
+    padding-inline-start: to-rem(20);
+    padding-bottom: to-rem(20);
+    margin-bottom: to-rem(23);
+
+    &::before {
+      width: to-rem(12);
+      height: to-rem(12);
+    }
+  }
+}
+
+.work__card-text {
+  font-size: to-rem(14);
+  font-weight: $fw-normal;
+  line-height: 1.6;
+
+  @include mq-up(md) {
+    font-size: to-rem(16);
+  }
+}
+
+.work__card-text--small {
+  font-size: to-rem(12);
+  font-weight: $fw-normal;
+  line-height: 1.6;
+}
+
+// データを活用した改善業務 / 習熟度に応じたステップアップ
+.work__secondary {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(20);
+  margin-top: to-rem(20);
+  align-items: center;
+  @include mq-up(md) {
+    flex-direction: row;
+  }
+}
+
+.work__secondary-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: to-rem(20);
+  background-color: #e9f4f4;
+  border-radius: 10px;
+  padding: to-rem(30);
+  width: 100%;
+  @include mq-up(lg) {
+    gap: to-rem(24);
+    padding: to-rem(35) to-rem(60) to-rem(30);
+    width: 100%;
+    max-width: to-rem(630);
+  }
+}
+
+.work__secondary-items {
+  background: $white;
+  border-radius: 10px;
+  padding: to-rem(18);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: to-rem(15);
+  align-content: center;
+  margin-inline: auto;
+  @include mq-up(lg) {
+    padding: to-rem(25) to-rem(30);
+    min-height: to-rem(114);
+    width: 100%;
+  }
+}
+
+.work__secondary-item {
+  position: relative;
+  font-size: to-rem(16);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  text-align: left;
+  color: #006977;
+  padding-inline-start: to-rem(20);
+  @include mq-up(lg) {
+    white-space: nowrap;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: to-rem(8);
+    width: to-rem(11);
+    height: to-rem(11);
+    border-radius: 50%;
+    background-color: #2ad0ce;
+  }
+
+  @include mq-up(lg) {
+    font-size: to-rem(20);
+    padding-inline-start: to-rem(20);
+
+    &::before {
+      width: to-rem(12);
+      height: to-rem(12);
+    }
+  }
+}
+
+.work__secondary-desc {
+  font-size: to-rem(14);
+  font-weight: $fw-normal;
+  line-height: 1.6;
+
+  @include mq-up(md) {
+    font-size: to-rem(16);
+  }
+}
+
+// 下部まとめ（波背景 + 白ボックス + イラスト）
+.work__summary-wrap {
+  position: relative;
+  overflow: hidden;
+  // margin-bottom: to-rem(200);
+
+}
+
+.work__summary-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.work__summary-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: to-rem(24);
+
+  @include mq-up(md) {
+    flex-direction: row;
+    justify-content: center;
+    gap: to-rem(32);
+  }
+}
+
+.work__summary-figure {
+
+  order: -1;
+
+  img {
+    width: 100%;
+    max-width: to-rem(180);
+    height: auto;
+    display: block;
+  }
+
+  @include mq-up(md) {
+    order: 0;
+    align-self: center;
+
+    img {
+      max-width: to-rem(207);
+    }
+  }
+}
+
+.work__summary-figure--right {
+  @include mq-up(md) {
+    order: 2;
+  }
+}
+
+.work__summary-box {
+  margin-top: to-rem(30);
+}
+
+.work__summary-text {
+  font-size: clamp(1.125rem, calc(1.02rem + 0.535vw), 1.5rem);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  text-align: left;
+  margin-bottom: to-rem(4);
+
+  @include mq-up(md) {
+    text-align: center;
+  }
+}
+
+.work__summary-text--white {
+  border-bottom: 4px solid $white;
+}

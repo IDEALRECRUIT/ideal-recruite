@@ -1,0 +1,155 @@
+@use "../global" as *;
+
+.abiz-support {
+  position: relative;
+  background-color: #e9f4f4;
+  padding-block: to-rem(60);
+  overflow: hidden;
+  z-index: 2;
+  margin-top: to-rem(-2);
+
+  @include mq-up(md) {
+    padding-block: to-rem(80);
+  }
+}
+
+.abiz-support__bg {
+  position: absolute;
+  top: 6%;
+  right: -5%;
+  pointer-events: none;
+  background: url("/images/about__treat.webp") no-repeat center center / contain;
+  aspect-ratio: 654 / 568;
+  width: min(to-rem(654), 50vw); // 画面幅の50%を超えない
+  height: auto; // aspect-ratioで自動調整
+  @include mq-down(md) {
+  transform: translateX(50%);
+  width: to-rem(220);
+  height: to-rem(190);
+  top: 5%;
+  right: 15%;
+  }
+  }
+
+.abiz-support__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.abiz-support__heading-wrap {
+  text-align: center;
+  margin-bottom: to-rem(32);
+
+  @include mq-up(md) {
+    margin-bottom: to-rem(40);
+  }
+}
+
+.abiz-support__title {
+  font-size: to-rem(22);
+  font-weight: $fw-bold;
+  line-height: 1.5;
+  margin-bottom: to-rem(12);
+
+  @include mq-up(md) {
+    font-size: to-rem(38);
+    margin-bottom: to-rem(16);
+  }
+}
+
+.abiz-support__lead {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+
+  @include mq-up(md) {
+    font-size: to-rem(32);
+  }
+}
+
+.abiz-support__highlight {
+  padding-inline: 0.25em;
+  padding-block: 0.1em;
+
+  &--yellow {
+    background-color: $yellow;
+  }
+
+  &--teal {
+    background-color: $main;
+    color: $white;
+    font-weight: $fw-bold;
+  }
+}
+
+.abiz-support__card {
+  border-radius: to-rem(10);
+  padding: to-rem(30) to-rem(30) to-rem(296);
+  position: relative;
+  background-color: $white;
+
+  @include mq-up(md) {
+    padding: to-rem(32) to-rem(42);
+    padding-inline-end: to-rem(368);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    background: url("/images/about__illust.webp") no-repeat center center /
+      contain;
+    aspect-ratio: 302 / 336;
+    width: to-rem(302);
+    height: to-rem(336);
+    top: 68%;
+    right: 8%;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    @include mq-down(md) {
+      width: to-rem(230);
+      height: to-rem(260);
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.abiz-support__card-title {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  color: #12889a;
+  margin-bottom: to-rem(11);
+  display: flex;
+  align-items: center;
+  gap: to-rem(12);
+
+  &::after {
+    content: "";
+    flex: 0 0 to-rem(56);
+    height: 2px;
+    background-color: #12889a;
+  }
+
+  @include mq-up(md) {
+    font-size: to-rem(32);
+    margin-bottom: to-rem(11);
+    gap: to-rem(16);
+
+    &::after {
+      flex: 0 0 to-rem(91);
+    }
+  }
+}
+
+.abiz-support__card-text {
+  font-size: to-rem(14);
+  font-weight: $fw-normal;
+  line-height: 1.8;
+
+  @include mq-up(md) {
+    font-size: to-rem(24);
+  }
+}

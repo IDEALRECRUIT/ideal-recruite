@@ -1,0 +1,32 @@
+@use "../global" as *;
+
+// 業務支援の全体像セクション
+
+.support-overview {
+  padding-block: to-rem(60);
+  background-image: url("/images/gd-top.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mq-up(md) {
+    padding-block: to-rem(100) to-rem(12);
+  }
+}
+
+.support-overview__heading {
+  margin-bottom: to-rem(20);
+
+  @include mq-up(md) {
+    margin-bottom: to-rem(24);
+  }
+}
+
+.support-overview__figure {
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

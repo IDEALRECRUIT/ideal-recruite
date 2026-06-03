@@ -1,0 +1,20 @@
+@use "../global" as *;
+
+.section-title {
+  font-size: to-rem(20);
+
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  text-align: center;
+  @include mq-up(md) {
+    font-size: to-rem(38);
+  }
+}
+
+.section-title--white {
+  color: $white;
+}
+
+.section-title--green {
+  color: #006977;
+}

@@ -1,0 +1,99 @@
+@use "../global" as *;
+
+// ================================================
+// ボタン（サンプル）
+// ================================================
+
+.button {
+  padding-block: to-rem(10);
+  padding-inline: to-rem(23);
+  font-size: to-rem(16);
+  font-weight: $fw-bold;
+  color: #fff;
+  background-color: $main;
+  border: 1px solid transparent;
+  border-radius: to-rem(40);
+  text-align: center;
+  transition:
+    color 0.3s,
+    background-color 0.3s,
+    border-color 0.3s;
+  white-space: nowrap;
+  max-width: to-rem(174);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: $main;
+      background-color: #fff;
+      border-color: $main;
+
+      .button__badge {
+        border: 1px solid $main;
+      }
+    }
+  }
+}
+
+.button--large {
+  display: flex;
+  font-size: to-rem(24);
+  border-radius: to-rem(60);
+  max-width: to-rem(320);
+  justify-content: center;
+  gap: to-rem(32);
+  align-items: center;
+  padding-block: to-rem(10);
+  padding-inline: to-rem(23);
+  box-shadow: 0px 9px 24px 0px rgba(42, 192, 190, 0.30000001192092896);
+  @include mq-up(md) {
+    max-width: to-rem(314);
+    font-size: to-rem(24);
+    padding-block: to-rem(14);
+    padding-inline: to-rem(42);
+  }
+}
+
+// 白基調ボタン（角丸・影・ティールアクセントバッジ）
+.button--white {
+  background-color: #fff;
+  color: $main;
+  box-shadow: 0 to-rem(2) to-rem(8) rgba(0, 0, 0, 0.08);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: #fff;
+      background-color: $main;
+
+      .button__badge {
+        color: $main;
+        background-color: #fff;
+        border: 1px solid $main;
+      }
+    }
+  }
+}
+
+.button--white .button__badge {
+  color: #fff;
+  background-color: #2ad0ce;
+  border: 1px solid transparent;
+  width: to-rem(44);
+  height: to-rem(44);
+  font-size: to-rem(14);
+  display: grid;
+  place-content: center;
+}
+
+.button__badge {
+  font-size: to-rem(12);
+  font-weight: $fw-bold;
+  color: $main;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: to-rem(50);
+  padding: to-rem(10) to-rem(7);
+  @include mq-up(md) {
+    font-size: to-rem(16);
+    padding: to-rem(13) to-rem(9);
+  }
+}

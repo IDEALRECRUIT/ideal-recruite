@@ -1,0 +1,178 @@
+@use "../global" as *;
+
+// 採用代行事業の成長・実績セクション
+
+.career {
+  padding-block: to-rem(96) to-rem(60);
+  background-image: url("/images/content02SP.webp");
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  position: relative;
+  @include mq-up(md) {
+    padding-block: to-rem(108) to-rem(42);
+    background-image: url("/images/content02.webp");
+  }
+}
+
+.career::before {
+  content: "";
+  position: absolute;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/arrow__yellow.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: to-rem(288);
+  height: to-rem(96);
+  @include mq-up(md) {
+    top: -2%;
+  }
+}
+
+// 上部: 成長テキスト + イラスト | グラフ
+.career__growth {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(32);
+
+  @include mq-up(md) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: to-rem(4);
+  }
+}
+
+.career__growth-content {
+  flex: 1;
+}
+
+.career__growth-text {
+  font-size: clamp(1.125rem, calc(0.82rem + 1.31vw), 2rem);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+}
+
+.career__growth-text--yellow {
+  background-color: #ffc803;
+}
+
+.career__img {
+  width: to-rem(230);
+  margin-left: auto;
+
+  img {
+    width: 100%;
+    aspect-ratio: 395/290;
+    height: auto;
+    object-fit: cover;
+  }
+  @include mq-up(md) {
+    width: to-rem(395);
+    margin-left: 9rem;
+  }
+}
+
+.career__graph-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.career__graph-title {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  color: #efa400;
+
+  @include mq-up(md) {
+    font-size: to-rem(30);
+  }
+}
+
+.career__graph-caption {
+  font-size: to-rem(12);
+  margin-bottom: to-rem(12);
+  opacity: 0.9;
+}
+
+.career__graph {
+  margin: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.career__results-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(16);
+  margin-bottom: to-rem(32);
+
+  @include mq-up(md) {
+    flex-direction: row;
+    gap: to-rem(24);
+    margin-bottom: to-rem(24);
+    margin-top: -2%;
+  }
+}
+
+.career__highlight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: to-rem(16);
+  padding: to-rem(20) to-rem(24);
+  border-radius: to-rem(10);
+  min-height: to-rem(100);
+
+  @include mq-up(md) {
+    padding: to-rem(24) to-rem(28);
+    gap: to-rem(20);
+    min-height: to-rem(120);
+  }
+}
+
+.career__highlight-icon {
+  flex-shrink: 0;
+  width: to-rem(56);
+  height: to-rem(56);
+  background-color: rgba(150, 160, 170, 0.25);
+  border-radius: to-rem(8);
+
+  @include mq-up(md) {
+    width: to-rem(64);
+    height: to-rem(64);
+  }
+}
+
+.career__highlight-text {
+  margin: 0;
+  font-size: to-rem(15);
+  font-weight: $fw-bold;
+  line-height: 1.5;
+
+  @include mq-up(md) {
+    font-size: to-rem(18);
+  }
+}
+
+.career__answer {
+  margin-top: to-rem(30);
+  @include mq-up(md) {
+    margin-top: to-rem(37);
+  }
+}
+
+.career__answer-title {
+  font-size: clamp(1.25rem, calc(0.99rem + 1.13vw), 2rem);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  text-align: center;
+}

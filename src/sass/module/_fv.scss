@@ -1,0 +1,177 @@
+@use "../global" as *;
+
+.fv {
+  padding-top: to-rem(68);
+  overflow: hidden;
+  @include mq-up(md) {
+    padding-top: to-rem(130);
+  }
+}
+
+.fv__inner {
+  padding-left: to-rem(20);
+  padding-right: to-rem(20);
+  @include mq-up(md) {
+    padding-left: to-rem(40);
+    padding-right: 0;
+  }
+}
+
+.fv__container {
+  display: grid;
+  gap: to-rem(13);
+  margin-left: auto;
+  /* SP */
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "logo"
+    "image"
+    "content";
+}
+
+/* PC */
+@include mq-up(md) {
+  .fv__container {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    max-width: to-rem(1300);
+
+    grid-template-areas:
+      "logo image"
+      "content image";
+  }
+}
+
+/* ワイドPCのみ固定幅中央寄せ */
+@include mq-up(wide-2) {
+  .fv__container {
+    max-width: to-rem(1440);
+    margin-inline: auto;
+  }
+}
+
+/* エリア指定 */
+.fv__logo {
+  grid-area: logo;
+}
+
+.fv__image {
+  grid-area: image;
+}
+
+.fv__content {
+  grid-area: content;
+  display: grid;
+  justify-items: center;
+  @include mq-up(md) {
+    justify-items: start;
+  }
+}
+
+.fv__logo {
+  width: clamp(to-rem(239), 30vw, to-rem(435)); // 239px〜435pxで可変
+  margin-inline: auto;
+  margin-top: to-rem(40);
+  @include mq-up(md) {
+  margin-left: initial;
+  }
+  }
+
+.fv__logo img {
+  object-fit: contain;
+  aspect-ratio: 435 / 143;
+}
+
+.fv__lead {
+  font-size: to-rem(20);
+  font-weight: $fw-bold;
+  color: $black;
+  text-align: center;
+  @include mq-up(md) {
+    margin-top: to-rem(53);
+    font-size: to-rem(28);
+  }
+}
+
+.fv__title {
+  font-size: to-rem(28);
+  font-weight: $fw-bold;
+  color: $black;
+  text-align: center;
+  @include mq-up(md) {
+    font-size: to-rem(38);
+  }
+}
+
+.fv__title-em {
+  color: #12889a;
+  display: inline-block;
+}
+
+.fv__btn {
+  margin-top: to-rem(20);
+  @include mq-up(md) {
+    margin-top: to-rem(47);
+  }
+}
+
+.fv__image {
+  width: min(to-rem(360), 100%);
+  margin-left: auto;
+  margin-right: calc(50% - 50vw);
+  // タブレット（768px〜1023px）
+  @include mq-up(md) {
+  width: to-rem(500); // 802 → 500に縮小
+  margin-right: 0;
+  margin-left: initial;
+  padding-left: 0; // 43 → 0
+  }
+  // PC（1024px以上）
+  @include mq-up(lg) {
+  width: to-rem(802); // 元のサイズに戻す
+  padding-left: to-rem(43);
+  }
+  }
+
+.fv__image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 800 / 500;
+}
+
+.fv__introduction-container {
+  margin-top: to-rem(60);
+  position: relative;
+  @include mq-up(md) {
+    margin-top: to-rem(100);
+  }
+}
+
+.fv__introduction-container::before {
+  @include mq-down(md) {
+    content: "";
+    position: absolute;
+    top: -42%;
+    right: 0; // -3rem → 0 に変更（はみ出さない）
+    width: to-rem(138);
+    height: to-rem(118);
+    background-image: url("/images/intro__treat.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    z-index: -1;
+  }
+}
+
+.fv__introduction-text {
+  font-size: clamp(1.25rem, calc(0.86rem + 1.69vw), 2.375rem);
+  font-weight: $fw-bold;
+  line-height: 1.6;
+  text-align: center;
+  color: $black;
+}
+
+.fv__introduction-text span {
+  color: $second;
+}

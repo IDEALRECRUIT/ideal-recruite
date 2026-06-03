@@ -1,0 +1,59 @@
+@use "../global" as *;
+
+// ================================================
+// ドロワーメニュー
+// ================================================
+
+// スクロール制御
+body.is-drawer-open {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.drawer {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #e9f4f4;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+
+  @include mq-up(lg) {
+    display: none;
+  }
+}
+
+.drawer__body {
+  width: 100%;
+  height: 100%;
+  padding: to-rem(80) to-rem(20) to-rem(40);
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer__list {
+  display: flex;
+  flex-direction: column;
+  gap: to-rem(24);
+  margin-top: to-rem(40);
+}
+
+.drawer__list a {
+  font-size: to-rem(18);
+  font-weight: $fw-bold;
+  color: $black;
+  display: block;
+}
+
+.drawer__btn {
+  margin-top: to-rem(40);
+}

@@ -1,0 +1,15 @@
+@use "../global" as *;
+
+.hero {
+  background-image: url(/images/fv__treatSP.webp);
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  @include mq-up(md) {
+    background-image: url(/images/fv__treat.webp);
+  }
+  @include mq-up(wide) {
+    background-size: cover;
+    background-position: bottom;
+  }
+}

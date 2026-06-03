@@ -1,0 +1,30 @@
+@use "../global" as *;
+
+// 事業収益化に向けた支援計画セクション
+
+.revenue-plan {
+  padding-block: to-rem(60);
+  background-image: url("/images/gd-top.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mq-up(md) {
+    padding-block: to-rem(68) to-rem(110);
+  }
+}
+
+.revenue-plan__heading {
+  margin-bottom: to-rem(32);
+
+  @include mq-up(md) {
+    margin-bottom: to-rem(16);
+  }
+}
+
+.revenue-plan__figure {
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}

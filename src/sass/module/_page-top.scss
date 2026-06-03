@@ -1,0 +1,50 @@
+@use "../global" as *;
+
+// ================================================
+// ページトップボタン
+// FVを過ぎたら表示、footerに入ったら非表示（JSで .is-visible を付与）
+// ================================================
+.page-top {
+  position: fixed;
+  right: to-rem(20);
+  bottom: to-rem(24);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @include mq-up(md) {
+    right: to-rem(40);
+    bottom: to-rem(40);
+  }
+}
+
+.page-top__link {
+  display: block;
+  line-height: 0;
+
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.3s;
+    }
+  }
+}
+
+.page-top__image {
+  display: block;
+  width: to-rem(56);
+  height: auto;
+  object-fit: contain;
+
+  @include mq-up(md) {
+    width: to-rem(80);
+  }
+}
