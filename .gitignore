@@ -16,6 +16,6 @@ npm-debug.log*
 .idea/
 
 # 画像ファイル
-public/images/
+# public/images/
 .vercel
 .env*
