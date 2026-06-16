@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "npm run generate:webp:dev && vite",
-    "build": "vite build",
-    "build:prod": "vite build --minify",
+    "build": "vite build && cp src/syukyaku/*.jsx dist/syukyaku/ && cp -r src/syukyaku/uploads dist/syukyaku/",
+    "build:prod": "vite build --minify && cp src/syukyaku/*.jsx dist/syukyaku/ && cp -r src/syukyaku/uploads dist/syukyaku/",
     "optimize": "node scripts/optimize-images.js",
     "generate:webp:dev": "node scripts/generate-dev-webp.js"
   },

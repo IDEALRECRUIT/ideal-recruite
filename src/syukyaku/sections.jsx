@@ -488,42 +488,42 @@ function Results() {
     {
       budget: "100,000",
       jobs: "約9,000",
-      apps: "76〜100",
-      cpa: "1,000〜1,315",
+      apps: "66〜76",
+      cpa: "1,300〜1,500",
       validRate: "50%",
-      validApps: "38〜50",
-      validCPA: "2,000〜2,600",
-      validCPAFee: "12,000〜12,600",
+      validApps: "33〜38",
+      validCPA: "2,600〜3,000",
+      validCPAFee: "12,600〜13,000",
       meetRate: "60%",
-      meets: "22〜30",
-      meetCPA: "20,000〜21,000",
+      meets: "19〜22",
+      meetCPA: "21,000〜21,600",
     },
     {
       budget: "150,000",
       jobs: "約9,000",
-      apps: "114〜150",
-      cpa: "1,000〜1,315",
+      apps: "100〜115",
+      cpa: "1,300〜1,500",
       validRate: "50%",
-      validApps: "57〜75",
-      validCPA: "2,000〜2,600",
-      validCPAFee: "12,000〜12,600",
+      validApps: "50〜57",
+      validCPA: "2,600〜3,000",
+      validCPAFee: "12,600〜13,000",
       meetRate: "60%",
-      meets: "34〜45",
-      meetCPA: "20,000〜21,000",
+      meets: "30〜34",
+      meetCPA: "21,000〜21,600",
       featured: true,
     },
     {
       budget: "200,000",
       jobs: "約9,000",
-      apps: "150〜200",
-      cpa: "1,000〜1,315",
+      apps: "133〜153",
+      cpa: "1,300〜1,500",
       validRate: "50%",
-      validApps: "75〜100",
-      validCPA: "2,000〜2,600",
-      validCPAFee: "12,000〜12,600",
+      validApps: "66〜76",
+      validCPA: "2,600〜3,000",
+      validCPAFee: "12,600〜13,000",
       meetRate: "60%",
-      meets: "45〜60",
-      meetCPA: "20,000〜21,000",
+      meets: "39〜45",
+      meetCPA: "21,000〜21,600",
     },
   ];
   const cols = [
@@ -1296,16 +1296,6 @@ function Contact() {
               <Field label="ご相談内容" required>
                 <textarea name="entry.1977386434" rows="4" placeholder="集客面でのお困りごと、ご質問など"></textarea>
               </Field>
-              <label style={{display:"flex", gap:10, alignItems:"flex-start", fontSize:13, color:"var(--sub)"}}>
-                <input
-                  type="checkbox"
-                  name="entry.982514320"
-                  value="プライバシーポリシーに同意のうえ、送信します。"
-                  required
-                  style={{marginTop:4}}
-                />
-                <span><a href="#" style={{color:"var(--primary)", textDecoration:"underline"}}>プライバシーポリシー</a>に同意のうえ、送信します。</span>
-              </label>
               <button
                 type="submit"
                 className="btn btn-primary"
@@ -1336,6 +1326,7 @@ function Field({ label, required, children }) {
         }}>必須</span>}
       </span>
       {React.cloneElement(children, {
+        required: required,
         style: {
           border:"1px solid var(--line)",
           borderRadius:6,

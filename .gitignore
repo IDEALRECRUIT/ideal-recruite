@@ -17,3 +17,5 @@ npm-debug.log*
 
 # 画像ファイル
 public/images/
+.vercel
+.env*
